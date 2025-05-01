@@ -1,0 +1,79 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: "v6.0.0"
+    hooks:
+      - id: check-added-large-files
+      - id: check-ast
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-shebang-scripts-are-executable
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-xml
+      - id: check-yaml
+        args: ["--unsafe"]
+      - id: debug-statements
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: name-tests-test
+        args: ["--pytest-test-first"]
+      - id: trailing-whitespace
+
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: "v4.11.6"
+    hooks:
+      - id: commitizen
+      - id: commitizen-branch
+        args: ["--rev-range", "HEAD"]
+        stages: [pre-push]
+
+  - repo: https://github.com/abravalheri/validate-pyproject
+    rev: "v0.24.1"
+    hooks:
+      - id: validate-pyproject
+
+  - repo: local
+    hooks:
+      - id: ruff-format
+        name: ruff format
+        entry: uv run --quiet --group lint ruff format
+        language: python
+        files: "^(src|tests)"
+        types_or: [python, pyi]
+        additional_dependencies: ["uv~=0.9.0"]
+      - id: ruff-check
+        name: ruff check
+        entry: uv run --quiet --group lint ruff check
+        args: ["--fix"]
+        language: python
+        files: "^(src|tests)"
+        types_or: [python, pyi]
+        additional_dependencies: ["uv~=0.9.0"]
+      - id: mypy
+        name: mypy (static type checker)
+        entry: uv run --quiet --group lint mypy
+        language: python
+        files: "^src"
+        types_or: [python, pyi]
+        additional_dependencies: ["uv~=0.9.0"]
+      - id: test-matrix
+        name: test matrix
+        entry: uv run --quiet --group test tox -qq
+        language: python
+        always_run: true
+        pass_filenames: false
+        stages: [pre-push]
+        additional_dependencies: ["uv~=0.9.0"]
+      - id: mkdocs-build
+        name: build documentation
+        entry: uv run --quiet --group docs --directory docs mkdocs
+        args: ["build"]
+        language: python
+        always_run: true
+        pass_filenames: false
+        stages: [pre-push]
+        additional_dependencies: ["uv~=0.9.0"]

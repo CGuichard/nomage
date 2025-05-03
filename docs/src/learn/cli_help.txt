@@ -1,0 +1,7 @@
+usage: nomage [-h] [-V]
+
+nomage - Naming convention utilities
+
+options:
+  -h, --help     show this help message and exit
+  -V, --version  print version and exit

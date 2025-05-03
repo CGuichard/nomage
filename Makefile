@@ -67,9 +67,11 @@ test-matrix: ## Run automated tests across multiple isolated python versions.
 	@$(TOX)
 
 docs: ## Build the documentation.
+	@$(UV) run --directory docs scripts/gen_cli_help_txt.py
 	@$(MKDOCS) build
 
 docs-live: ## Live-edition of the documentation.
+	@$(UV) run --directory docs scripts/gen_cli_help_txt.py
 	@$(MKDOCS) serve
 
 clean: ## Clean temporary files, like python '__pycache__', dist build, docs output, tests reports.

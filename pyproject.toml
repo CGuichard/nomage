@@ -84,7 +84,6 @@ test = [
 docs = [
     "mike~=2.1",
     "mkdocs~=1.6",
-    "mkdocs-click~=0.9", # CLI reference
     "mkdocs-gen-files~=0.5", # API reference
     "mkdocs-literate-nav~=0.6", # API reference
     "mkdocs-material~=9.7",

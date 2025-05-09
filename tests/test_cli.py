@@ -2,30 +2,34 @@
 
 from importlib.metadata import metadata
 
-from click.testing import CliRunner
+import pytest
 
 from nomage._cli import main
 
-runner = CliRunner()
+
+def test_no_args() -> None:
+    """Running CLI with no arguments nor options."""
+    with pytest.raises(SystemExit) as exc_info:
+        main([])
+    assert exc_info.value.code == -1
 
 
-def test_cli() -> None:
-    """Running CLI without argument print help."""
-    result = runner.invoke(main)
-    assert result.exit_code == 2
-    assert result.stderr.startswith("Usage:")
+def test_help(capsys: pytest.CaptureFixture[str]) -> None:
+    """Running CLI with --help."""
+    with pytest.raises(SystemExit) as exc_info:
+        main(["--help"])
+
+    capture = capsys.readouterr()
+    assert exc_info.value.code == 0
+    assert "usage:" in capture.out
 
 
-def test_cli_version() -> None:
-    """Running CLI with arg "version" print package name and version number."""
+def test_version_flag(capsys: pytest.CaptureFixture[str]) -> None:
+    """Running CLI with "--version" to print package version number."""
     m = metadata("nomage")
-    pkg_name = m["Name"]
-    pkg_version = m["version"]
-    pkg_summary = m["Summary"]
+    with pytest.raises(SystemExit) as exc_info:
+        main(["--version"])
 
-    result = runner.invoke(main, ["version"])
-
-    assert result.exit_code == 0
-    assert pkg_name in result.stdout
-    assert pkg_version in result.stdout
-    assert pkg_summary in result.stdout
+    capture = capsys.readouterr()
+    assert exc_info.value.code == 0
+    assert m["version"] in capture.out

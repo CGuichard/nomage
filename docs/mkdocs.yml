@@ -145,6 +145,6 @@ extra:
     - icon: fontawesome/brands/github
       link: "https://github.com/CGuichard/nomage"
     - icon: fontawesome/brands/python
-      link: "https://github.com/CGuichard/nomage"
+      link: "https://pypi.org/project/nomage/"
     - icon: fontawesome/brands/dev
       link: "https://github.com/CGuichard/nomage/issues"

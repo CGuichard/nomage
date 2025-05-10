@@ -1,5 +1,11 @@
 # Nomage
 
+<div align="center" style="margin:40px;">
+
+<img src="https://raw.githubusercontent.com/CGuichard/nomage/main/docs/src/assets/img/logo.png" alt="Nomage logo" style="margin-bottom: 20px" width="500"/>
+
+_Utility for parsing and converting naming conventions_
+
 <!-- --8<-- [start:badges] -->
 
 [![Language](https://img.shields.io/badge/language-python≥3.10-3776ab?style=flat-square)](https://www.python.org/)
@@ -17,6 +23,8 @@
 [Feature Request](https://github.com/CGuichard/nomage/issues/new?template=feature_request.md)
 
 <!-- --8<-- [end:badges] -->
+
+</div>
 
 <!-- --8<-- [start:introduction] -->
 

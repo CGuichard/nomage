@@ -5,7 +5,16 @@ hide:
 
 # Welcome to Nomage
 
+<figure markdown>
+  ![Logo](./assets/img/logo.png#only-light){ width="500" }
+  ![Logo](./assets/img/logo-light.png#only-dark){ width="500" }
+
+  _Utility for parsing and converting naming conventions_
+</figure>
+
+<div markdown="1" align="center">
 --8<-- "README.md:badges"
+</div>
 
 ## Introduction
 

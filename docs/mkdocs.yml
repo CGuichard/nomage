@@ -30,6 +30,8 @@ theme:
     - search.share
     - search.suggest
     - toc.follow
+  logo: assets/img/icon.png
+  favicon: assets/img/favicon.ico
   icon:
     repo: fontawesome/brands/github
   palette:
@@ -41,12 +43,16 @@ theme:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      primary: deep purple
+      accent: deep purple
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: black
+      accent: deep purple
       toggle:
         icon: material/weather-night
         name: Switch to system preference

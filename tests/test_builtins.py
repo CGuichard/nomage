@@ -33,3 +33,19 @@ def test_builtins_conventions_key_lookup() -> None:
     assert conventions.get("snake_case") == conventions.get("snake")
     assert conventions.get("snake_case") == conventions.get("snake-case")
     assert conventions.get("snake_case") == conventions.get("snakecase")
+
+
+def test_builtins_conventions() -> None:
+    """Test all `builtins_conventions` values.
+
+    All built-in conventions returned by `builtins_conventions`.
+    Because for each convention the names given respect their own
+    convention we can use it for the test.
+    """
+    conventions = set(builtins_conventions().values())
+    for nc in conventions:
+        id_str = nc.names[0]
+        assert nc.match(id_str)
+        parsed_test_str = nc.parser(id_str)
+        converted_test_str = nc.converter(parsed_test_str)
+        assert id_str == converted_test_str

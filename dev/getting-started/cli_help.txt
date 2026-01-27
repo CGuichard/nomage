@@ -1,0 +1,12 @@
+usage: nomage [-h] [-V] [-t TO_CONVENTION] [-c CHECK_CONVENTION] [identifier]
+
+nomage - Utility for parsing and converting naming conventions
+
+positional arguments:
+  identifier
+
+options:
+  -h, --help            show this help message and exit
+  -V, --version         print version and exit
+  -t TO_CONVENTION, --to TO_CONVENTION
+  -c CHECK_CONVENTION, --check CHECK_CONVENTION

@@ -19,6 +19,7 @@ theme:
     - content.action.edit
     - content.action.view
     - content.code.copy
+    - content.tabs.link
     - content.tooltips
     - navigation.footer
     - navigation.indexes
@@ -70,9 +71,18 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      use_pygments: true
+  - pymdownx.inlinehilite
   - pymdownx.snippets:
       base_path: ["..", "src"]
       check_paths: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - toc:
       permalink: true
 
@@ -115,15 +125,18 @@ plugins:
 nav:
   - Home: index.md
   - Getting started:
-      - Installation: getting-started/install.md
-      - Usage: getting-started/usage.md
+      - getting-started/install.md
+      - getting-started/api.md
+      - CLI: getting-started/cli.md
   - Learn:
-      - learn/overview.md
-      - CLI: learn/cli.md
-  - Tutorials:
-      - tutorials/overview.md
-  - How-to guides:
-      - how-to/overview.md
+      - learn/index.md
+      - learn/conventions.md
+      - Usage:
+          - learn/usage/detect.md
+          - learn/usage/check.md
+          - learn/usage/convert.md
+      - Advanced usage:
+          - learn/advanced/custom_convention.md
   - API Reference: reference/api/
   - Development:
       - development/contributing.md

@@ -20,7 +20,7 @@ hide:
 
 --8<-- "README.md:introduction"
 
-For more information on installation and usage, head to the
+For more information on the installation and the first-steps, head to the
 [Getting started](./getting-started/install.md) section!
 
 Visit the [Help page](./about/help.md) if you are looking for help.

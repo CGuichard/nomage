@@ -9,15 +9,25 @@ If you need help with any aspect of Nomage, let us know! We would be happy to he
 
 Start by exploring this documentation, which covers:
 
-- **Installation**: Detailed steps to get the project running smoothly. Head to
-  [Getting started > Installation](../getting-started/install.md).
-- **Usage**
-    - **Overview**: Simple examples to begin using Nomage, can be found in
-      [Getting started > Usage](../getting-started/usage.md).
-    - **Learning**: Comprehensive information on endpoints and functionality.
-      [Learn](../learn/overview.md) and [Tutorials](../tutorials/overview.md).
-    - **Examples**: Practical use cases can be found in [How-to guides](../how-to/overview.md).
-- **API Reference**: Extensive documentation of the Python API.
+- **Getting started**
+    - **[Installation](../getting-started/install.md)**: Detailed steps to get the project
+      running smoothly.
+    - **[Python API](../getting-started/api.md)**: Start with a quick overview of the Python API.
+    - **[CLI](../getting-started/cli.md)**: Introduction to the command-line interface.
+- **Learn**
+    - **[Built-in conventions](../learn/conventions.md)**: The full list of supported built-in
+      naming conventions.
+    - **Usage**
+        - **[Detection](../learn/usage/detect.md)**: Learn how to detect the convention used
+          by an identifier.
+        - **[Check / Assertion](../learn/usage/check.md)**: Check if an identifier match a
+          given convention.
+        - **[Conversion / Transform](../learn/usage/convert.md)**: Learn how to convert from
+          one convention to the other.
+    - **Advanced usage**
+        - **[Custom convention](../learn/advanced/custom_convention.md)**: Learn to create
+          custom naming convention with the API for your specific use-cases.
+- **[API Reference](../reference/api/nomage/__init__.md)**: Extensive documentation of the Python API.
 
 If the documentation doesn’t answer your question, don’t worry—there are more ways to get help!
 

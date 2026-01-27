@@ -50,27 +50,23 @@ jobs:
           name: sbom
           path: sbom.cyclonedx.json
 
-  # publish-pypi:
-  #   name: Publish to PyPI
-  #   needs: [build]
-  #   runs-on: ubuntu-latest
-  #   environment:
-  #     name: testpypi
-  #     url: https://test.pypi.org/p/nomage
-  #     # name: pypi
-  #     # url: https://pypi.org/p/nomage
-  #   permissions:
-  #     id-token: write # IMPORTANT: mandatory for trusted publishing
-  #   steps:
-  #     - name: Download distribution artifacts
-  #       uses: actions/download-artifact@v7
-  #       with:
-  #         name: build
-  #         path: dist/
-  #     - name: Publish distribution package
-  #       uses: pypa/gh-action-pypi-publish@release/v1
-  #       with:
-  #         repository-url: https://test.pypi.org/legacy/
+  publish-pypi:
+    name: Publish to PyPI
+    needs: [build]
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/nomage
+    permissions:
+      id-token: write # IMPORTANT: mandatory for trusted publishing
+    steps:
+      - name: Download distribution artifacts
+        uses: actions/download-artifact@v7
+        with:
+          name: build
+          path: dist/
+      - name: Publish distribution package
+        uses: pypa/gh-action-pypi-publish@release/v1
 
   gh-release:
     name: GitHub Release

@@ -82,6 +82,7 @@ test = [
     "tox-uv",
 ]
 docs = [
+    "click<8.3",
     "mike~=2.1",
     "mkdocs~=1.6",
     "mkdocs-gen-files~=0.5", # API reference

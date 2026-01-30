@@ -5,6 +5,7 @@ It can detect, parse, and convert identifiers between various conventions like
 camelCase, snake_case, kebab-case, etc.
 
 The package includes:
+
 - A command-line interface for quick conversions
 - A Python API for programmatic usage
 - Built-in support for common naming conventions

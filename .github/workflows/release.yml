@@ -71,8 +71,7 @@ jobs:
   gh-release:
     name: GitHub Release
     runs-on: ubuntu-latest
-    needs: [build, sbom]
-    # needs: [build, sbom, publish-pypi]
+    needs: [build, sbom, publish-pypi]
     permissions:
       contents: write # IMPORTANT: mandatory for making GitHub Releases
       id-token: write # IMPORTANT: mandatory for sigstore

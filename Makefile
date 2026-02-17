@@ -5,7 +5,7 @@ HELP_COLUMN=11
 
 UV=uv
 PYTHON=$(UV) run python
-PRE_COMMIT=$(UV) run pre-commit
+PRE_COMMIT=$(UV) run prek
 COMMITIZEN=$(UV) run cz
 RUFF=$(UV) run --group lint ruff
 MYPY=$(UV) run --group lint mypy
@@ -37,7 +37,6 @@ release: ## Bump version, create tag and update 'CHANGELOG.md'.
 	@./scripts/update_latest_tag_msg.sh
 
 pre-commit: ## Run all pre-commit hooks.
-	@$(PRE_COMMIT) run --all-files
 	@$(PRE_COMMIT) run --all-files --hook-stage pre-push
 
 shell: ## Open Python shell.

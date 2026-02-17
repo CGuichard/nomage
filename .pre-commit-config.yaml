@@ -1,5 +1,4 @@
 # See https://pre-commit.com for more information
-# See https://pre-commit.com/hooks.html for more hooks
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: "v6.0.0"
@@ -24,7 +23,7 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: "v4.11.6"
+    rev: "v4.13.7"
     hooks:
       - id: commitizen
       - id: commitizen-branch
@@ -32,34 +31,34 @@ repos:
         stages: [pre-push]
 
   - repo: https://github.com/abravalheri/validate-pyproject
-    rev: "v0.24.1"
+    rev: "v0.25"
     hooks:
       - id: validate-pyproject
 
   - repo: local
     hooks:
       - id: ruff-format
-        name: ruff format
+        name: ruff format (formatting)
         entry: uv run --quiet --group lint ruff format
         language: python
         files: "^(src|tests)"
         types_or: [python, pyi]
-        additional_dependencies: ["uv~=0.9.0"]
+        additional_dependencies: ["uv~=0.10.0"]
       - id: ruff-check
-        name: ruff check
+        name: ruff check (linting)
         entry: uv run --quiet --group lint ruff check
         args: ["--fix"]
         language: python
         files: "^(src|tests)"
         types_or: [python, pyi]
-        additional_dependencies: ["uv~=0.9.0"]
+        additional_dependencies: ["uv~=0.10.0"]
       - id: mypy
         name: mypy (static type checker)
         entry: uv run --quiet --group lint mypy
         language: python
         files: "^src"
         types_or: [python, pyi]
-        additional_dependencies: ["uv~=0.9.0"]
+        additional_dependencies: ["uv~=0.10.0"]
       - id: test-matrix
         name: test matrix
         entry: uv run --quiet --group test tox -qq
@@ -67,7 +66,7 @@ repos:
         always_run: true
         pass_filenames: false
         stages: [pre-push]
-        additional_dependencies: ["uv~=0.9.0"]
+        additional_dependencies: ["uv~=0.10.0"]
       - id: mkdocs-build
         name: build documentation
         entry: uv run --quiet --group docs --directory docs mkdocs
@@ -76,4 +75,4 @@ repos:
         always_run: true
         pass_filenames: false
         stages: [pre-push]
-        additional_dependencies: ["uv~=0.9.0"]
+        additional_dependencies: ["uv~=0.10.0"]

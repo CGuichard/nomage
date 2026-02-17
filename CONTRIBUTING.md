@@ -55,7 +55,7 @@ We recommend a Linux-based distribution. You will need the following tools on yo
   you'll need the interpreter.
 - [Make](https://www.gnu.org/software/make/): utility mandatory to run the `make` command,
   that we use for shortcuts of most-used commands in the project life-cycle.
-- [uv](https://docs.astral.sh/uv/) (≥0.9.0): package and project manager for Python.
+- [uv](https://docs.astral.sh/uv/) (≥0.10.0): package and project manager for Python.
 
 ### Clone the repository
 
@@ -77,7 +77,7 @@ Here's what it does:
 
 - `uv sync`: create an isolated Python virtual environment, install the project in
   editable mode, synchronize project dependencies, and also install `dev` dependency group.
-- `pre-commit install --install-hooks`: install pre-commit [hooks](#hooks).
+- `prek install --install-hooks`: install pre-commit [hooks](#hooks).
 
 ## How to contribute?
 
@@ -181,7 +181,7 @@ find about our QA tools.
 
 ##### Lint
 
-To ensure good code writing, we use a lot the following lint tools:
+To ensure good code writing, we use the following lint tools:
 
 - [ruff](https://docs.astral.sh/ruff/): an extremely fast Python linter and formatter,
   written in Rust. Compatible with `black` formatting style, implement for
@@ -280,7 +280,9 @@ the [Commit](#commit) section.
 Our hooks needs the following dependencies:
 
 - Python (≥3.10)
-- pre-commit (≥4.0)
+- prek (≥0.3.0)
+
+> Note: We use `prek`, a rust implementation of `pre-commit`.
 
 #### Pull
 

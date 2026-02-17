@@ -2294,7 +2294,7 @@ to make an approved contribution. Don't hesitate to share some new ideas to impr
   you'll need the interpreter.</li>
 <li><a href="https://www.gnu.org/software/make/">Make</a>: utility mandatory to run the <code>make</code> command,
   that we use for shortcuts of most-used commands in the project life-cycle.</li>
-<li><a href="https://docs.astral.sh/uv/">uv</a> (≥0.9.0): package and project manager for Python.</li>
+<li><a href="https://docs.astral.sh/uv/">uv</a> (≥0.10.0): package and project manager for Python.</li>
 </ul>
 <h3 id="clone-the-repository">Clone the repository<a class="headerlink" href="#clone-the-repository" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/CGuichard/nomage.git
@@ -2308,7 +2308,7 @@ to make an approved contribution. Don't hesitate to share some new ideas to impr
 <ul>
 <li><code>uv sync</code>: create an isolated Python virtual environment, install the project in
   editable mode, synchronize project dependencies, and also install <code>dev</code> dependency group.</li>
-<li><code>pre-commit install --install-hooks</code>: install pre-commit <a href="#hooks">hooks</a>.</li>
+<li><code>prek install --install-hooks</code>: install pre-commit <a href="#hooks">hooks</a>.</li>
 </ul>
 <h2 id="how-to-contribute">How to contribute?<a class="headerlink" href="#how-to-contribute" title="Permanent link">&para;</a></h2>
 <h3 id="organization">Organization<a class="headerlink" href="#organization" title="Permanent link">&para;</a></h3>
@@ -2392,7 +2392,7 @@ readable code is not a luxury, it is a necessity.</p>
 find about our QA tools.</p>
 <h4 id="quality-assurance">Quality Assurance<a class="headerlink" href="#quality-assurance" title="Permanent link">&para;</a></h4>
 <h5 id="lint">Lint<a class="headerlink" href="#lint" title="Permanent link">&para;</a></h5>
-<p>To ensure good code writing, we use a lot the following lint tools:</p>
+<p>To ensure good code writing, we use the following lint tools:</p>
 <ul>
 <li><a href="https://docs.astral.sh/ruff/">ruff</a>: an extremely fast Python linter and formatter,
   written in Rust. Compatible with <code>black</code> formatting style, implement for
@@ -2461,8 +2461,11 @@ the <a href="#commit">Commit</a> section.</p>
 <p>Our hooks needs the following dependencies:</p>
 <ul>
 <li>Python (≥3.10)</li>
-<li>pre-commit (≥4.0)</li>
+<li>prek (≥0.3.0)</li>
 </ul>
+<blockquote>
+<p>Note: We use <code>prek</code>, a rust implementation of <code>pre-commit</code>.</p>
+</blockquote>
 <h4 id="pull">Pull<a class="headerlink" href="#pull" title="Permanent link">&para;</a></h4>
 <p>It is good practice to pull with rebase over a normal pull.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>git<span class="w"> </span>switch<span class="w"> </span>&lt;your-branch&gt;
